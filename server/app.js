@@ -47,10 +47,15 @@ Application.prototype.start = function( http_port ) {
                 });
             }
             else {
+                console.log( 'updating score for user ', user );
                 user.score = score;
-                self.db.users.update( { id: user._id }, user, function( err, doc ) {
-                    if( err ) return res.send( { err: 'Couldn\'t save user' } );
-                    return res.send( doc.score );
+                self.db.users.update( { _id: user._id }, user, function( err, doc ) {
+                    if( err  ) {
+                        console.log( err, doc );
+                        return res.send( { err: 'Couldn\'t save user' } );
+                    }
+                    console.log( doc );
+                    return res.send( user.score );
                 });
             }
         });
