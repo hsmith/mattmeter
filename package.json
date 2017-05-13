@@ -1,0 +1,16 @@
+{
+  "name": "matt_meter",
+  "version": "1.0.0",
+  "description": "How is Matt Doing?",
+  "author": "Howard N Smith <howard@blacktriangles.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "nedb": "^1.8.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
